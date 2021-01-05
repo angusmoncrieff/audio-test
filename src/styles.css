@@ -4,14 +4,21 @@ body {
 }
 
 .buttons-container {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    /* width: 100%; */
+    max-width: 800px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: space-between;
 }
 
 button {
-    margin: 1rem;
-    width: 140px;
-    height: 50px;
+    /* margin: 1rem;
+    width: 140px; */
+    min-height: 30px;
 }
 
 
@@ -19,8 +26,9 @@ button {
     position: fixed;
     right: 0;
     top: 0;
-    height: 95%;
-    width: 70%;
+    left: 0;
+    height: 90%;
+    /* width: 90%; */
     border: 1px solid #555;
     background-color: #000;
     overflow-y: auto;
