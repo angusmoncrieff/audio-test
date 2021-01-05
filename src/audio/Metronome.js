@@ -7,6 +7,7 @@
  */
 class BaseMetronome {
     constructor(tempo = 60) {
+        console.log('- BaseMetronome constructor() ');
         this.tempo = tempo;
         this.playing = false;
 
@@ -17,7 +18,11 @@ class BaseMetronome {
     }
 
     initAudio() {
+        console.log('- BaseMetronome initAudio() ');
         this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        this.audioCtx.resume();
+
+        console.log(`- this.audioCtx?.state: ${this.audioCtx?.state}`)
         this.tick = this.audioCtx.createOscillator();
         this.tickVolume = this.audioCtx.createGain();
 
@@ -40,6 +45,7 @@ class BaseMetronome {
     }
 
     clickAtTime(time) {
+        console.log(`- BaseMetronome clickAtTime() - state: ${this.audioCtx?.state} `);
         // Silence the click.
         this.tickVolume.gain.cancelScheduledValues(time);
         this.tickVolume.gain.setValueAtTime(0, time);

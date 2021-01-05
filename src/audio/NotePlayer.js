@@ -67,6 +67,7 @@ class NotePlayer {
 
     playSingleNote(note, noteIndex, instrument, setSoundingHalos) {
 
+        console.log(`- NotePlayer.playSingleNote() called.., state: ${this.audioContext?.state}`)
         this.instrument = instrument;
         this.setHalos = setSoundingHalos;
 
@@ -84,6 +85,8 @@ class NotePlayer {
             // set the note halo:
             this.setHalo(noteIndex, durationInSecs);
         })
+
+        console.log('- NotePlayer.playSingleNote() done')
 
     }
 

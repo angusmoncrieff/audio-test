@@ -1,0 +1,37 @@
+body {
+    padding: 40px;
+    background-color: #282c34;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 1rem;
+    width: 140px;
+    height: 50px;
+}
+
+
+#log-box {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 95%;
+    width: 70%;
+    border: 1px solid #555;
+    background-color: #000;
+    overflow-y: auto;
+}
+
+.msg-log {
+    color: #aaa;
+}
+.msg-warn {
+    color: rgb(243, 231, 59);
+}
+.msg-error {
+    color: rgb(167, 18, 18);
+}
